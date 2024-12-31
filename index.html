@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            background: linear-gradient(135deg, #1f4037, #99f2c8);
+            color: #ffffff;
+        }
+        header, footer {
+            background: #111827;
+        }
+        nav {
+            background: rgba(17, 24, 39, 0.8);
+        }
+        #main-content {
+            display: none;
+        }
+    </style>
+    <script>
+        function handleLogin(event) {
+            event.preventDefault();
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            if (email === 'user@fitnesshub.com' && password === 'password123') {
+                alert('Login successful!');
+                document.getElementById('login-section').style.display = 'none';
+                document.getElementById('main-content').style.display = 'block';
+            } else {
+                alert('Invalid credentials, please try again.');
+            }
+        }
+    </script>
+</head>
+<body>
+    <section id="login-section" class="min-h-screen flex items-center justify-center">
+        <div class="max-w-md p-6 bg-white text-black shadow-lg rounded">
+            <h2 class="text-3xl font-semibold text-center mb-6">Login</h2>
+            <form onsubmit="handleLogin(event)">
+                <div class="mb-4">
+                    <label for="email" class="block text-sm font-medium mb-2">Email</label>
+                    <input type="email" id="email" name="email" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Enter your email">
+                </div>
+                <div class="mb-4">
+                    <label for="password" class="block text-sm font-medium mb-2">Password</label>
+                    <input type="password" id="password" name="password" class="w-full px-4 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-500" placeholder="Enter your password">
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="bg-green-500 text-white px-6 py-2 rounded hover:bg-green-600">Login</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <div id="main-content">
+        <header class="text-white text-center py-6">
+            <h1 class="text-4xl font-bold">Fitness Hub</h1>
+            <p class="text-lg">Your partner in health and wellness</p>
+        </header>
+
+        <nav class="text-white">
+            <ul class="flex justify-center space-x-4 py-3">
+                <li><a href="#about" class="hover:bg-gray-700 px-4 py-2 rounded">About</a></li>
+                <li><a href="#services" class="hover:bg-gray-700 px-4 py-2 rounded">Services</a></li>
+                <li><a href="#videos" class="hover:bg-gray-700 px-4 py-2 rounded">Videos</a></li>
+                <li><a href="#images" class="hover:bg-gray-700 px-4 py-2 rounded">Gallery</a></li>
+                <li><a href="#contact" class="hover:bg-gray-700 px-4 py-2 rounded">Contact</a></li>
+            </ul>
+        </nav>
+
+        <main class="container mx-auto p-6">
+            <section id="about" class="mb-12">
+                <h2 class="text-3xl font-semibold text-center mb-6">About Us</h2>
+                <p class="text-lg text-justify">At Fitness Hub, we empower individuals to achieve their fitness goals through personalized guidance. Our experienced trainers and nutritionists guide you every step of the way, whether you're starting your fitness journey or looking to advance.</p>
+            </section>
+
+            <section id="services" class="mb-12">
+                <h2 class="text-3xl font-semibold text-center mb-6">Our Services</h2>
+                <ul class="list-disc text-lg pl-8">
+                    <li>Customized workout plans</li>
+                    <li>One-on-one personal training</li>
+                    <li>Nutritional counseling</li>
+                    <li>Group fitness classes</li>
+                    <li>Online fitness coaching</li>
+                </ul>
+            </section>
+
+            <section id="videos" class="mb-12">
+                <h2 class="text-3xl font-semibold text-center mb-6">Fitness Videos</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <iframe class="w-full h-64" src="https://www.youtube.com/embed/5qap5aO4i9A" title="Morning Yoga Routine" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                    <iframe class="w-full h-64" src="https://www.youtube.com/embed/bv4zpXr1Vuo" title="#loveyoga" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+                </div>
+            </section>
+
+            <section id="images" class="mb-12">
+                <h2 class="text-3xl font-semibold text-center mb-6">Fitness Gallery</h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <img src="https://images.pexels.com/photos/2247179/pexels-photo-2247179.jpeg?cs=srgb&dl=pexels-thelazyartist-2247179.jpg&fm=jpg/350x200" alt="Strength Training" class="rounded shadow">
+                    <img src="https://images.pexels.com/photos/1954524/pexels-photo-1954524.jpeg?auto=compress&cs=tinysrgb&w=600/350x200" alt="Cardio Workout" class="rounded shadow">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTR8fHlvZ2F8ZW58MHx8MHx8fDA%3D/350x200" alt="Yoga Session" class="rounded shadow">
+                </div>
+            </section>
+
+            <section id="contact" class="mb-12">
+                <h2 class="text-3xl font-semibold text-center mb-6">Contact Us</h2>
+                <p class="text-lg text-center mb-6">Have questions? Reach out to us using the details below:</p>
+                <ul class="text-center space-y-2">
+                    <li>Email: <a href="mailto:contact@fitnesshub.com" class="text-red-500">Srushti@gmail.com</a></li>
+                    <li>Phone: +91 8618363088</li>
+                    <li>Address: CMR Institute Of Technology</li>
+                </ul>
+            </section>
+        </main>
+
+        <footer class="text-white text-center py-4">
+            <p class="text-sm">&copy; 2024 Fitness Hub. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
